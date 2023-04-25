@@ -167,10 +167,6 @@ func configureOpenIdIssuer(issuerUrl string) (*http.Server, error) {
 		return nil, fmt.Errorf("-openid-issuer must be a base URL e.g. http://any-host:8237")
 	}
 
-	if url.Scheme != "http" {
-		return nil, fmt.Errorf("-openid-issuer only supports http protocol")
-	}
-
 	if url.Path != "" {
 		return nil, fmt.Errorf("-openid-issuer must not contain a path")
 	}
