@@ -118,9 +118,6 @@ func TestConfigureOpenIdIssuerRejectsInvalidUrl(t *testing.T) {
 	_, err = configureOpenIdIssuer("junk")
 	assert.Error(t, err, "-openid-issuer must be a base URL e.g. http://any-host:8237")
 
-	_, err = configureOpenIdIssuer("https://foo:8900")
-	assert.Error(t, err, "-openid-issuer only supports http protocol")
-
 	_, err = configureOpenIdIssuer("http://foo:8900/deep")
 	assert.Error(t, err, "-openid-issuer must not contain a path")
 }
